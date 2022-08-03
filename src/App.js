@@ -4,6 +4,7 @@ import BpkButton from 'bpk-component-button';
 import BpkText from 'bpk-component-text';
 import BpkCalendar from 'bpk-component-calendar';
 import BpkInput, { INPUT_TYPES } from 'bpk-component-input';
+import { CALENDAR_SELECTION_TYPE } from 'bpk-component-datepicker';
 import format from 'date-fns/format';
 
 import STYLES from './App.scss';
@@ -69,9 +70,8 @@ class Calendar extends Component {
 
     this.state = {
       selectionConfiguration: {
-        type: CALENDAR_SELECTION_TYPE.range,
-        startDate: new Date(),
-        endDate: new Date()
+        type: CALENDAR_SELECTION_TYPE.single,
+        date: null
         }
     };
   }
@@ -79,7 +79,7 @@ class Calendar extends Component {
   handleDateSelect = (date) => {
     this.setState({
       selectionConfiguration: {
-        type: this.props.selectionConfiguration.type,
+        type: CALENDAR_SELECTION_TYPE.single,
         date: date,
       },
     });
@@ -114,21 +114,24 @@ class Calendar extends Component {
 
 const c = className => STYLES[className] || 'UNKNOWN';
 
-const App = () => (
-  <div className={c('App')}>
-    <header className={c('App__header')}>
-      <div className={c('App__header-inner')}>
-        <BpkText tagName="h1" textStyle="xxl" className={c('App__heading')}>Flight Schedule</BpkText>
-      </div>
-    </header>
-    <main className={c('App__main')}>
-      <BpkText tagName="p" className={c('App__text')}>
-        To get started, edit <BpkCode>src/App.jsx</BpkCode> and save to reload.
-      </BpkText>
-      <BpkButton onClick={() => alert('It works!')}>Click me</BpkButton>
-    </main>
-  </div>
-);
+export default class App extends React.Component {
+  render() {
+    return (
+      <div className={c('App')}>
+      <header className={c('App__header')}>
+        <div className={c('App__header-inner')}>
+          <BpkText tagName="h1" textStyle="xxl" className={c('App__heading')}>Flight Schedule</BpkText>
+        </div>
+      </header>
+      <main className={c('App__main')}>
+        <div className="calendar-container">
+          <Calendar />
+        </div>
+        <BpkButton onClick={() => alert('It works!')}>Continue</BpkButton>
+      </main>
+    </div>
+    );
+  }
+}
 
-export default App;
 

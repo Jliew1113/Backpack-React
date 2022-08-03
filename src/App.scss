@@ -5,6 +5,11 @@
   margin: 0 auto;
 }
 
+@mixin centre {
+  position: absolute;
+  left: 38.5%;
+}
+
 .App {
   text-align: center;
 
@@ -29,6 +34,8 @@
     padding: $bpk-spacing-xxl;
 
     @include container;
+
+    @include centre;
 
     @include bpk-breakpoint-mobile {
       padding: $bpk-spacing-base;

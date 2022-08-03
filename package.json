@@ -29,6 +29,7 @@
     "bpk-component-button": "^6.2.9",
     "bpk-component-calendar": "^11.2.3",
     "bpk-component-code": "^3.1.14",
+    "bpk-component-datepicker": "^17.0.1",
     "bpk-component-input": "^6.1.20",
     "bpk-component-text": "^6.2.0",
     "bpk-mixins": "^28.3.0",
