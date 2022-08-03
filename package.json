@@ -6,7 +6,7 @@
     "@skyscanner/backpack-react-scripts": "10.0.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "start-ssr": "react-scripts start-ssr",
     "build": "react-scripts build",
     "build-ssr": "react-scripts build-ssr",
@@ -27,7 +27,9 @@
   },
   "devDependencies": {
     "bpk-component-button": "^6.2.9",
+    "bpk-component-calendar": "^11.2.3",
     "bpk-component-code": "^3.1.14",
+    "bpk-component-input": "^6.1.20",
     "bpk-component-text": "^6.2.0",
     "bpk-mixins": "^28.3.0",
     "bpk-stylesheets": "^7.1.40",
